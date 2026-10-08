@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbfbfd;
+  --foreground: #14121f;
+
+  --brand-indigo: #3d2170;
+  --brand-indigo-light: #5a37a0;
+  --brand-teal: #00a99d;
+  --brand-magenta: #e6197e;
+  --brand-navy: #10111f;
+  --brand-mist: #f4f3fa;
+  --brand-line: #e6e3f1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-indigo-light: var(--brand-indigo-light);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-mist: var(--brand-mist);
+  --color-brand-line: var(--brand-line);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.diamond-grain {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(0, 169, 157, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 0%, rgba(230, 25, 126, 0.12), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(61, 33, 112, 0.18), transparent 50%);
+}
+
+.phone-shadow {
+  box-shadow:
+    0 60px 120px -40px rgba(16, 17, 31, 0.45),
+    0 20px 40px -20px rgba(16, 17, 31, 0.35);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease both;
+}
+
+::selection {
+  background: var(--brand-magenta);
+  color: white;
+}
